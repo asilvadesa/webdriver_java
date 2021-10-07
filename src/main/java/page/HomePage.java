@@ -12,6 +12,9 @@ public class HomePage {
     @FindBy(linkText = "Form Authentication")
     private WebElement formAuthenticationLink;
 
+    @FindBy(linkText = "Dropdown")
+    private WebElement dropdownLink;
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -21,4 +24,8 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
+    public DropDrownPage clickDropdown(){
+        dropdownLink.click();
+        return new DropDrownPage(driver);
+    }
 }
